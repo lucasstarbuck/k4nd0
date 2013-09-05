@@ -14,6 +14,10 @@ group :production do
 	gem 'pg'
 end
 
+#Fix for Heroku - static asset serving and logging
+gem 'rails_12factor', group: :production
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc2'
 
