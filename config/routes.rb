@@ -1,4 +1,6 @@
 Kandu::Application.routes.draw do
+  resources :taskblocks
+
   devise_for :users
 get 'about' => 'pages#about'
 

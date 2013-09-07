@@ -1,0 +1,27 @@
+<h1>Listing taskblocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taskblocks.each do |taskblock| %>
+      <tr>
+        <td><%= taskblock.description %></td>
+        <td><%= link_to 'Show', taskblock %></td>
+        <td><%= link_to 'Edit', edit_taskblock_path(taskblock) %></td>
+        <td><%= link_to 'Destroy', taskblock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taskblock', new_taskblock_path %>
