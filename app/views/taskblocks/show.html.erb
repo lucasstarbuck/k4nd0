@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+		<p>
+		<%= @taskblock.description %>
+		</p>
+		<%= link_to 'Edit', edit_taskblock_path(@taskblock) %> |
+		<%= link_to 'Back', taskblocks_path %>
+		
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @taskblock.description %>
-</p>
-
-<%= link_to 'Edit', edit_taskblock_path(@taskblock) %> |
-<%= link_to 'Back', taskblocks_path %>
+	
