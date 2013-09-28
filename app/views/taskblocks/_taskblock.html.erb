@@ -1,6 +1,9 @@
 	<tr>
         <td><%= taskblock.description %></td>
         <td><%= link_to 'Show', taskblock %></td>
+         <% if current_user == taskblock.user %>
         <td><%= link_to 'Edit', edit_taskblock_path(taskblock) %></td>
         <td><%= link_to 'Destroy', taskblock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+    
       </tr>

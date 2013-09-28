@@ -1,4 +1,5 @@
 class TaskblocksController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   before_action :set_taskblock, only: [:show, :edit, :update, :destroy]
 
   # GET /taskblocks
@@ -14,17 +15,18 @@ class TaskblocksController < ApplicationController
 
   # GET /taskblocks/new
   def new
-    @taskblock = Taskblock.new
+    @taskblock = current_user.taskblocks.new
   end
 
   # GET /taskblocks/1/edit
   def edit
+    @taskblock = current_user.taskblocks.find(params[:id])
   end
 
   # POST /taskblocks
   # POST /taskblocks.json
   def create
-    @taskblock = Taskblock.new(taskblock_params)
+    @taskblock = current_user.taskblocks.new(params[:taskblock])
 
     respond_to do |format|
       if @taskblock.save
@@ -54,6 +56,7 @@ class TaskblocksController < ApplicationController
   # DELETE /taskblocks/1
   # DELETE /taskblocks/1.json
   def destroy
+    @taskblock = current_user.taskblock.find(params[:id])
     @taskblock.destroy
     respond_to do |format|
       format.html { redirect_to taskblocks_url }

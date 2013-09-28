@@ -34,7 +34,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # User management
-gem 'devise'
+gem 'devise', '3.0.3'
 
 # Form betterment
 gem "simple_form", "~> 3.0.0.rc"

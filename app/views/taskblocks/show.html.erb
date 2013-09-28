@@ -1,14 +1,16 @@
 <div class="row">
-	<div class="span6 offset3">
-		<div class="well">
-		<p>
-		<%= @taskblock.description %>
-		</p>
-		<%= link_to 'Edit', edit_taskblock_path(@taskblock) %> |
-		<%= link_to 'Back', taskblocks_path %>
-		
-		</div>
-	</div>
+    <div class="span6 offset3">
+        <div class="well">
+            <p>
+              <%= @taskblock.description %>
+            </p>
+            <p>
+              <%= @taskblock.user.name %>
+            </p>
+            <% if current_user == @taskblock.user %>
+                <%= link_to 'Edit', edit_taskblock_path(@taskblock) %> |
+            <% end %>
+            <%= link_to 'Back', taskblocks_path %>
+        </div>
+    </div>
 </div>
-
-	
