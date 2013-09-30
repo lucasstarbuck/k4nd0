@@ -35,6 +35,7 @@ gem 'jquery-rails'
 
 # User management
 gem 'devise', '3.0.3'
+gem 'omniauth-google-oauth2'
 
 # Form betterment
 gem "simple_form", "~> 3.0.0.rc"

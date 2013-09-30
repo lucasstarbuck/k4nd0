@@ -252,4 +252,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   # config.secret_key = 'fbbf2ade054ef6f43e22306e1a11cd49c2e601d80e817a0c37e0a269a6c5466e00ca790a86fba8ee5993bc880a401937a791c9c02a55ce9d6329f5afdb0b9591'
+config.omniauth :google_oauth2, '493076936972.apps.googleusercontent.com', 'GI_qCi8HoNq85jGrU5tf4--0'
+
 end

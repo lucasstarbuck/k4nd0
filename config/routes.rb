@@ -1,11 +1,11 @@
 Kandu::Application.routes.draw do
   resources :taskblocks
 
-  devise_for :users
 get 'about' => 'pages#about'
 
 root 'pages#home'
 
+devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
